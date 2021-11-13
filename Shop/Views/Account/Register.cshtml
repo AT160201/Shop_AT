@@ -1,0 +1,92 @@
+
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+
+
+<body>
+
+
+
+    <div class="body-wrapper">
+
+
+
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Login Register</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-section mb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
+                        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                        {
+                            @*<form action="/Authen" method="post">*@
+                            <div class="login-form">
+                                <h4 class="login-title">Register</h4>
+                                <div class="row">
+                                    <div class="col-md-12 col-12 mb-20">
+                                        <label>Email Address*</label>
+                                        <input class="mb-0" type="email" placeholder="Email Address" name="email">
+                                    </div>
+                                    <div class="col-12 mb-20">
+                                        <label>Your Name*</label>
+                                        <input class="mb-0" type="text" placeholder="Your Name" name="username">
+                                    </div>
+                                    <div class="col-12 mb-20">
+                                        <label>Password*</label>
+                                        <input class="mb-0" type="password" placeholder="Password" name="password">
+                                    </div>
+                                    <div class="col-12 mb-20">
+                                        <label>Date Of Birth</label>
+                                        <input class="mb-0" type="text" placeholder="YYYY-MM-dd" name="dob">
+                                    </div>
+                                    <div class="col-12 mb-20">
+                                        <label>Phone</label>
+                                        <input class="mb-0" type="text" placeholder="Phone" name="phone">
+                                    </div>
+                                    <div class="col-12 mb-20">
+                                        <label>Address</label>
+                                        <input class="mb-0" type="text" placeholder="Address" name="address">
+                                    </div>
+                                    <div class="col-12 mb-20">
+                                        <label>Gender</label>
+                                        <select name="Gender">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+
+
+                                    <p style="color:red">@ViewBag.error</p>
+                                    <div class="col-md-12">
+                                        <button class="register-button mt-0">Sign Up</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            @*</form>*@
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+
+</html>
+
