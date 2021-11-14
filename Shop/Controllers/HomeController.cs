@@ -51,6 +51,7 @@ namespace Shop.Controllers
             }
             else
             {
+                list= all.products.Where(n => n.name_pro.Contains(searchString)).ToList();
                 if (orderBy == "")
                 {
                     list = all.products.Where(n => n.name_pro.Contains(searchString)).ToList();
@@ -78,13 +79,14 @@ namespace Shop.Controllers
             }
             
             ViewBag.search = searchString;
+            ViewBag.currentFile= searchString;
             ViewBag.order = orderBy;
             ViewBag.id_cat = cat.id_cat;
             int pageSize = 6;
             int pageNumber = (page ?? 1);
             return View(list.ToPagedList(pageNumber, pageSize));
         }
-        
+       
 
     }
 }
